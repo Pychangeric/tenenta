@@ -9,11 +9,6 @@ const Bedsitters = () => {
       <div className="sidebar">
         <h2>Bedsitters</h2>
         <button className="dropdown-btn">Towns</button>
-        <div className="dropdown-content">
-          <Link to="/town1">Town 1</Link>
-          <Link to="/town2">Town 2</Link>
-          <Link to="/town3">Town 3</Link>
-        </div>
         <div className="search-section">
           <input type="text" placeholder="Search: Towns" />
           <button>Search</button>
@@ -24,7 +19,9 @@ const Bedsitters = () => {
             <input type="text" placeholder="Min" />
             <input type="text" placeholder="Max" />
           </div>
-          <button>Input: Price</button>
+          <div className="price-tag">
+            <button>:Price</button>
+          </div>
           <button>Filter</button>
         </div>
         <button>Filter by Institutions</button>
@@ -40,7 +37,7 @@ const Bedsitters = () => {
 
       {/* Location Section */}
       <div className="location-section">
-        <div className="search-section">
+        <div className="search-sec">
           <input type="text" placeholder="Search: Location" />
           <button>Search</button>
         </div>
@@ -60,14 +57,13 @@ const Bedsitters = () => {
         </div>
       </div>
 
-      {/* List of Bedsitters */}
+      {/* List of Bedsitters 
       <div className="bedsitters-list">
         <div className="bedsitter-card">
           <h3>Bed 1</h3>
-          {/* Additional content */}
         </div>
-        {/* Add more bedsitter cards */}
       </div>
+      */}
     </div>
   );
 };
