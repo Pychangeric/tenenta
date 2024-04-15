@@ -1,0 +1,154 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .contact-section {
+    width: 100%;
+    padding: 10px;
+    background-color: #046ec5;
+    text-align: center;
+  }
+  
+  .logo-search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .logo img {
+    width: 90px;
+    height: 40px;
+  }
+  
+  /* Styling for the search bar */
+  .search input {
+    width: 400px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    font-size: 16px;
+    background-color: #d9d9d9;
+  }
+  
+  .search button {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: #d9d9d9;
+    color: #050505;
+    cursor: pointer;
+  }
+  
+  .account-button button {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: #d9d9d9;
+    color: #050505;
+    cursor: pointer;
+  }
+  
+  .main-content {
+    display: flex;
+    margin-top: 20px;
+  }
+  
+  
+  /* Styling for the sidebar */
+  .sidebar {
+    width: 350px; 
+    background-color: #d9d9d9;
+    padding: 10px;
+    border-radius: 20px;
+  }
+  
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+.sidebar ul li a {
+  text-decoration: none; 
+  display: block;
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 5px;
+  background-color: #ffffff; 
+  color: #000000;
+}
+
+.sidebar ul li a:hover {
+  background-color: #f0f0f0;
+}
+  
+  .intro-video {
+    width: 1490px;
+    height: 550px;
+    margin-left: 30px; 
+    background-color: #f0f0f0; 
+    overflow: hidden; 
+    border-radius: 20px;
+
+  }
+
+  .sample-houses {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    background-color: #d9d9d9;
+    padding: 20px;
+    margin-left: 380px;
+    border-radius: 20px;
+    z-index: 1;
+  }
+  
+  .house-one {
+    display: flex; 
+    flex-direction: row; 
+    margin: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+    width: 250px; 
+    height: 120px;
+  }
+  
+  
+  
+  /* Styling for the footer */
+  .footer {
+    margin-top: 20px;
+    width: 1845px;
+    height: 260px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    text-align: center;
+  }
+  
+  /* Styling for the footer links/buttons */
+  .footer button {
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 100px;
+    display: flex;
+    border: none;
+    background-color: #787a7c;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .copyright {
+    margin-top: 10px;
+  }
