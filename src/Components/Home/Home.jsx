@@ -31,17 +31,17 @@ const Home = () => {
         <div className="sidebar">
           <ul>
             <li><Link to="/bedsitters">Bedsitters</Link></li>
-            <li><Link to="/1-bedrooms">1 Bedrooms</Link></li>
-            <li><Link to="/2-bedrooms">2 Bedrooms</Link></li>
-            <li><Link to="/3-bedrooms">3 Bedrooms</Link></li>
+            <li><Link to="/Onebedrooms">1 Bedrooms</Link></li>
+            <li><Link to="/Twobedrooms">2 Bedrooms</Link></li>
+            <li><Link to="/Threebedrooms">3 Bedrooms</Link></li>
             <li><Link to="/4-bedrooms">4 Bedrooms</Link></li>
-            <li><Link to="/home-compounds">Home Compounds</Link></li>
-            <li><Link to="/bungalows">Bungalows</Link></li>
-            <li><Link to="/apartments">Apartments</Link></li>
-            <li><Link to="/vanillas">Vanillas</Link></li>
-            <li><Link to="/airbnbs">Air BnBs</Link></li>
-            <li><Link to="/hotels">Hotels</Link></li>
-            <li><Link to="/institutions">Institutions</Link></li>
+            <li><Link to="/Home-compounds">Home Compounds</Link></li>
+            <li><Link to="/Bungalows">Bungalows</Link></li>
+            <li><Link to="/Apartments">Apartments</Link></li>
+            <li><Link to="/Vanillas">Vanillas</Link></li>
+            <li><Link to="/Airbnbs">Air BnBs</Link></li>
+            <li><Link to="/Hotels">Hotels</Link></li>
+            <li><Link to="/Institutions">Institutions</Link></li>
           </ul>
         </div>
 

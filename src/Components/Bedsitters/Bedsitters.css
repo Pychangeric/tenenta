@@ -163,7 +163,8 @@
   flex-wrap: wrap;
   margin-top: 30px;
   gap: 10px;
-  max-height: 640px; /* Set maximum height for 4 rows */
+  max-height: 640px;
+  flex-shrink: 0;
   overflow-y: auto; 
 }
 
@@ -173,6 +174,7 @@
   flex-basis: calc(20% - 10px); 
   height: 200px;
   border-radius: 10px;
+  flex-shrink: 0;
   overflow-x: hidden;
 }
 
@@ -199,3 +201,4 @@
 .footer button:last-child {
   margin-right: 0;
 }
+
