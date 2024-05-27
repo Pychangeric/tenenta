@@ -1,7 +1,7 @@
 import React from 'react';
-import './Threebedrooms.css';
+import './HomeCompounds.css';
 
-const Threebedrooms = () => {
+const HomeCompounds = () => {
 
   function scrollRight() {
     const container = document.querySelector('.visited-locations');
@@ -35,7 +35,7 @@ const Threebedrooms = () => {
 
       {/* Sidebar */}
       <div className="sidebar">
-        <h2>Three Bedrooms</h2>
+        <h2>Home Compounds</h2>
         <button className="dropdown-btn">Towns</button>
         <div className="search-section1">
           <input type="text" placeholder="Search: Towns" />
@@ -69,13 +69,13 @@ const Threebedrooms = () => {
           </div>
         </div>
 
-        {/* List of Threebedrooms */}
-        <div className="Threebedrooms-list">
-          <div className="Threebedroom-card">
-            <h3>Bed 1</h3>
+        {/* List of Home Compounds */}
+        <div className="home-compounds-list">
+          <div className="home-compound-card">
+            <h3>Compound 1</h3>
             {/* Additional content */}
           </div>
-          {/* Other Threebedrooms cards */}
+          {/* Other home compound cards */}
         </div>
         {/* Footer */}
         <div className="footer">
@@ -89,4 +89,4 @@ const Threebedrooms = () => {
   );
 };
 
-export default Threebedrooms;
+export default HomeCompounds;

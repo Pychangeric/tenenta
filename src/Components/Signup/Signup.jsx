@@ -1,42 +1,52 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import './Signup.css';
 
 const Signup = () => {
   const [page, setPage] = useState(1);
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [isSendClicked, setIsSendClicked] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phoneNumber: '',
+    password: '',
+    confirmPassword: '',
+  });
   const [isSignupClicked, setIsSignupClicked] = useState(false);
-  
-  const paragraphs = [
-    "Welcome to Tenanta, your gateway to exceptional living! Discover curated listings of rental and sale properties across the country. Find your dream home with ease and explore detailed house specifications right here.",
-    "Step into a world of housing excellence with Tenanta! Uncover a wide array of homes available for rent and sale, each offering unique features and amenities. Your perfect abode awaits!",
-    "Experience the ultimate convenience in house hunting with Tenanta. Explore a diverse range of properties, from cozy apartments to spacious villas, and unlock detailed information to make informed decisions.",
-    "Join the Tenanta community and embark on a journey to find your ideal living space. Navigate through our comprehensive listings, discover hidden gems, and uncover the keys to your new home.",
-    "Discover a new standard in housing solutions with Tenanta. Dive into detailed house specifications, explore neighborhood insights, and embark on a seamless journey to find your perfect place to call home."
-  ];
+  const navigate = useNavigate();
 
   const handleNext = () => {
-    if (page < 5) {
+    if (page < 2) {
       setPage(page + 1);
     }
   };
 
-  const handleSend = () => {
-    setIsSendClicked(true);
-    // Perform any additional actions needed before moving to the next section
-    // For example, validate phone number, send data to the server, etc.
-  };
-
-  const handleSignup = () => {
+  const handleSignup = async (e) => {
+    e.preventDefault();
     setIsSignupClicked(true);
-    // Perform signup action here
-  };
-  const handlePaymentMethod = (method) => {
-    // Handle payment method selection here
-    console.log('Selected payment method:', method);
-    handleNext(); // Move to the next section
+    try {
+      const response = await axios.post('http://localhost:3000/users', formData, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      console.log('Signup successful:', response.data);
+      // Redirect to home page after successful signup
+      navigate('/home');
+    } catch (error) {
+      console.error('Signup error:', error);
+      setIsSignupClicked(false); // Re-enable button if there's an error
+    }
   };
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
   const handleBack = () => {
     if (page > 1) {
@@ -47,95 +57,47 @@ const Signup = () => {
   return (
     <div className='sign'>
       <div className='left-side'>
-        <video src="/assets/intro.mp4" controls autoPlay loop muted>
-         Your browser does not support the video tag.
-        </video>
         <img src="assets/logo.png" alt="Logo" />
-        <p>{paragraphs[page - 1]}</p> 
+        <p>{page === 1 ? "Welcome to Tenanta, your gateway to exceptional living!" : "Ensure your account is secure with a strong password."}</p>
       </div>
       <div className='right-side'>
-      {page === 1 && (
-            <>
-              <div className="up">
-              <h1>Wlecome to Tenanta</h1>
-                <div className="input-box">
-                  <input type="text" placeholder='First name' required />
-                </div>
-                <div className="input-box">
-                  <input type="text" placeholder='Last name' required />
-                </div>
-                <div className="input-box">
-                  <input type="text" placeholder='Email' required />
-                </div>
-                <div className="input-box">
-                  <input type="text" placeholder='Phone number' required />
-                </div>
-                <button onClick={handleNext}>Next</button>
-                <div className="links-container">
-                  <span> | </span>
-                  <a href="/login">Login</a>
-                </div>
-              </div>
-            </>
-          )}
-        {page === 2 && (
-          <form action="">
-            <h1>Security</h1>
-            <div className="input-box">
-                <input type="password" placeholder='Password' required />
+        {page === 1 && (
+          <>
+            <div className="up">
+              <h1>Welcome to Tenanta</h1>
+              <div className="input-box">
+                <input type="text" name="firstName" placeholder='First name' value={formData.firstName} onChange={handleChange} required />
               </div>
               <div className="input-box">
-                <input type="password" placeholder='Confirm Password' required />
+                <input type="text" name="lastName" placeholder='Last name' value={formData.lastName} onChange={handleChange} required />
               </div>
-            <button onClick={handleNext}>Next</button>
-            <button onClick={handleBack}>Back</button>
-          </form>
-        )}
-        {page === 3 && (
-          <form action="">
-            <h1>Billing</h1>
-            <p>To join us, choose your payment method:</p>
-            <div className="billing-options">
-                <div className="billing-option" onClick={() => handlePaymentMethod('monthly')}>
-                  <p>KSH. 100 per month</p>
-                </div>
-                <div className="billing-option" onClick={() => handlePaymentMethod('yearly')}>
-                  <p>KSH. 1000 per year</p>
-                </div>
+              <div className="input-box">
+                <input type="email" name="email" placeholder='Email' value={formData.email} onChange={handleChange} required />
               </div>
-              <div>
+              <div className="input-box">
+                <input type="text" name="phoneNumber" placeholder='Phone number' value={formData.phoneNumber} onChange={handleChange} required />
+              </div>
               <button onClick={handleNext}>Next</button>
-              <button onClick={handleBack}>Back</button>
+              <div className="links-container">
+                <span> | </span>
+                <a href="/login">Login</a>
+              </div>
             </div>
-          </form>
+          </>
         )}
-        {page === 4 && (
-          <form action="">
-            <h1>Payment Mode</h1>
-            <p>Choose your mode of payment:</p>
-            <div className="payment-mode">
-                <button onClick={handleNext}>Mpesa</button>
-                <button disabled>Airtel Money</button>
-              </div>            <div>
-              <button onClick={handleNext}>Next</button>
-              <button onClick={handleBack}>Back</button>
-            </div>
-          </form>
-        )}
-        {page === 5 && (
-          <form action="">
-            <h1>Phone Number</h1>
-            <p>Enter your phone number:</p>
+        {page === 2 && (
+          <form onSubmit={handleSignup}>
+            <h1>Security</h1>
             <div className="input-box">
-              <input type="text" placeholder='Enter Phone Number' required />
+              <input type="password" name="password" placeholder='Password' value={formData.password} onChange={handleChange} required />
             </div>
-            <div className="button-container">
-              <button onClick={handleBack} className="left-button">Back</button>
-              <button onClick={handleSend} disabled={isSendClicked} className="right-button">Send</button>
-              <button onClick={handleSignup} disabled={!isSendClicked || isSignupClicked} className="centered-button">Sign Up</button>
+            <div className="input-box">
+              <input type="password" name="confirmPassword" placeholder='Confirm Password' value={formData.confirmPassword} onChange={handleChange} required />
             </div>
+            <button type="submit" disabled={isSignupClicked}>Sign Up</button>
+            <button type="button" onClick={handleBack}>Back</button>
           </form>
-        )} 
+        )}
       </div>
     </div>
   );

@@ -1,17 +1,17 @@
-.home {
+.home1 {
     display: flex;
     flex-direction: column;
     padding: 20px;
   }
   
-  .contact-section {
+  .contact-section1 {
     width: 100%;
     padding: 10px;
     background-color: #046ec5;
     text-align: center;
   }
   
-  .logo-search {
+  .logo-search1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,7 +26,7 @@
   }
   
   /* Styling for the search bar */
-  .search input {
+  .search1 input {
     width: 400px;
     padding: 10px;
     border-radius: 5px;
@@ -36,7 +36,7 @@
     background-color: #d9d9d9;
   }
   
-  .search button {
+  .search1 button {
     padding: 8px 15px;
     border-radius: 5px;
     border: none;
@@ -45,7 +45,7 @@
     cursor: pointer;
   }
   
-  .account-button button {
+  .account-button1 button {
     padding: 8px 15px;
     border-radius: 5px;
     border: none;
@@ -54,30 +54,30 @@
     cursor: pointer;
   }
   
-  .main-content {
+  .main-content1 {
     display: flex;
     margin-top: 20px;
   }
   
   
   /* Styling for the sidebar */
-  .sidebar {
+  .sidebar1 {
     width: 350px; 
     background-color: #d9d9d9;
     padding: 10px;
   }
   
-.sidebar ul {
+.sidebar1 ul {
   list-style: none;
   padding: 0;
 }
 
-.sidebar ul li {
+.sidebar1 ul li {
   padding: 5px 0;
   cursor: pointer;
 }
 
-.sidebar ul li a {
+.sidebar1 ul li a {
   text-decoration: none; 
   display: block;
   padding: 10px;
@@ -87,11 +87,11 @@
   color: #000000;
 }
 
-.sidebar ul li a:hover {
+.sidebar1 ul li a:hover {
   background-color: #f0f0f0;
 }
   
-  .intro-video {
+  .intro-video1 {
     width: 1490px;
     height: 550px;
     margin-left: 30px; 
@@ -101,7 +101,7 @@
 
   }
 
-  .sample-houses {
+  .sample-houses1 {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;
@@ -112,7 +112,7 @@
     z-index: 1;
   }
   
-  .house-one {
+  .house-one1 {
     display: flex; 
     flex-direction: row; 
     margin: 10px;
